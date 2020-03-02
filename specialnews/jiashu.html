@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>特写 | 无锡桥塌“压碎”的家庭：“从一家三口，到只剩我一个” </title>
+		<link href="static/css/style.min.css" type="text/css" rel="stylesheet">
+		<link href="static/css/breadcrumbs.css" type="text/css" rel="stylesheet">
+		<link href="static/css/style.css" type="text/css" rel="stylesheet">
+		<link href="static/css/form-styles.css" type="text/css" rel="stylesheet">
+		<link href="static/css/index.css" type="text/css" rel="stylesheet">
+		<script src="static/js/modernizr.min.js" type="text/javascript"></script>
+		<script src="static/js/wkz1erz.js" type="text/javascript"></script>
+		<script src="static/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+		<script src="static/js/vendor.min.js" type="text/javascript"></script>
+		<script src="static/js/main.min.js" type="text/javascript"></script>
+		<link href="static/css/layout.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="editorContent" style="display:none">
+			<div align="justify">
+				<p>
+					<img src="static/img-jiashu/1.png"  alt="">
+				</p>
+				<p>
+					<span style="line-height:1.5;color:#666666;font-size:18px;"><span style="color:#666666;line-height:1.5;">#??#</span><br>
+					</span>
+				</p>
+				<p>
+					<img src="static/img-jiashu/2.png" alt="">
+				</p>
+				<p>
+					<span style="line-height:1.5;color:#666666;font-size:18px;"><span style="color:#666666;line-height:1.5;">#??#</span><br>
+					</span>
+				<p>
+				<p>
+					<img src="static/img-jiashu/3.png"  alt="">
+				</p>
+				<p>
+					<span style="line-height:1.5;color:#666666;font-size:18px;"><span style="color:#666666;line-height:1.5;">#??#</span><br>
+					</span>
+				</p>
+				<p>
+					<img src="static/img-jiashu/4.png" alt="">
+				</p>
+				<p>
+					<span style="line-height:1.5;color:#666666;font-size:18px;"><span style="color:#666666;line-height:1.5;">#??#</span><br>
+					</span>
+				<p>
+				<p>
+					<img src="static/img-jiashu/5.png"  alt="">
+				</p>
+				<p>
+					<span style="line-height:1.5;color:#666666;font-size:18px;"><span style="color:#666666;line-height:1.5;">#??#</span><br>
+					</span>
+				</p>
+				<p>
+					<img src="static/img-jiashu/6.png" alt="">
+				</p>
+				<p>
+					<span style="line-height:1.5;color:#666666;font-size:18px;"><span style="color:#666666;line-height:1.5;">#??#</span><br>
+					</span>
+				</p>
+				<p>
+					<img src="static/img-jiashu/7.png"  alt="">
+				</p>
+				<p>
+					<span style="line-height:1.5;color:#666666;font-size:18px;"><span style="color:#666666;line-height:1.5;">#??#</span><br>
+					</span>
+				</p>
+				<p>
+					<img src="static/img-jiashu/8.png" alt="">
+				</p>
+				<p>
+					<span style="line-height:1.5;color:#666666;font-size:18px;"><span style="color:#666666;line-height:1.5;">#??#</span><br>
+					</span>
+				</p>
+			</div>
+		</div>
+		<div id="page" class="page page--home sj-page page--single" data-pagename="home">
+		</div>
+		<div>
+		</div>
+		<div class="imgMask">
+			<div class="imgBox">
+				<div class="imgContent">
+					<img class="imgClose" src="static/picture/guanbi.png" alt="">
+					<img class="imgShow" src="" alt="">
+				</div>
+			</div>
+		</div>
+		<script>
+			var currentIndex = []
+			var boxHTML = $('#editorContent').html()
+			var reg = /#\?\?#/g;
+
+			do {
+				var ret = {}
+				var arr = reg.exec(boxHTML);
+				if (arr) {
+					console.log(arr)
+					ret.type = 0;
+					ret.index = arr['index'];
+					currentIndex.push(ret)
+				}
+			} while (arr)
+
+			function getLastIndex(index, currentIndex) {
+				var clen = currentIndex.length - 1
+				var cindex = 0;
+				if (index == 0) {
+					return 0
+				} else {
+					cindex = index - 1;
+				}
+				return currentIndex[cindex].index
+			}
+
+			var html = ""
+			if (currentIndex.length == 0) {
+				html += '<section class="story size--lrg postContents">'
+				html += '<div class="story__table">'
+				html += '<div class="sj-section sj-section-category-menu">'
+				html += '<div class="title"></div>'
+				html += '<div class="page_content" style="padding:20px;padding-top:12px;font-size:24px">'
+				html += boxHTML
+				html += '</div>'
+				html += '</div>'
+				html += '</div>'
+				html += '</section>'
+				$('#page').prepend(html)
+			} else {
+				for (key in currentIndex) {
+					var lastIndex = getLastIndex(key, currentIndex);
+					var str = boxHTML.substring(lastIndex, currentIndex[key].index);
+					var regCh = new RegExp("[\\u4E00-\\u9FFF]+");
+					var staff = reg.test(str) && !regCh.test(str);
+					str = str.replace(/#\?\?#/g, '');
+					var style1 = staff ? "size--lrg" : "size--lrg postContents";
+					var style2 = staff ? "sj-section-banner" : "sj-section-category-menu";
+					html += '<section class="story ' + style1 + '">'
+					html += '<div class="story__table">'
+					html += '<div class="sj-section ' + style2 + '">'
+					if (key == 0) {
+						html += '<div class="title" style="font-size:30px"></div>'
+					}
+					html += '<div class="page_content" style="padding:20px;padding-top:10px;">'
+
+					html += str
+					html += '</div>'
+					html += '</div>'
+					html += '</div>'
+					html += '</section>'
+				}
+				$('#page').append(html);
+				$(".sj-section-category-menu").each(function() {
+					if ($.trim($(this).text()) == "") {
+						$(this).removeClass("sj-section-category-menu");
+						$(this).parent().parent().removeClass("postContents");
+						$(this).addClass("sj-section-banner");
+					}
+				});
+				$('.sj-section-banner img').each(function(num, value) {
+					var src = $(value).attr('src');
+					$(value).css('display', 'none');
+					var box =
+						'<div class="contentImg" style="position:absolute;top:0px;left:0px;width:100%;height:100%;background:url(' +
+						src +
+						') no-repeat;background-size:cover;"><img class="imgOpen" src="/template/shejizhou/images/jia.png" alt="" /></div>'
+					$(value).after(box);
+				})
+			}
+			if ($(window).height() <= 670) {
+				$(".postContents img").each(function() {
+					$(this).height($(this).height() * 0.8);
+					$(this).width('auto');
+				});
+			}
+
+			/* 查看原图  */
+			var sale = 1150 / 750;
+			var ph = 165 / 1080;
+			var pw = 385 / 1920;
+			var box_h = Math.ceil($(window).height() - ($(window).height() * ph * 2));
+			var box_w = Math.ceil($(window).width() - ($(window).width() * pw * 2));
+			$(".imgShow").css({
+				maxWidth: box_w,
+				maxHeight: box_h
+			});
+			$(".imgBox").css({
+				width: box_w,
+				height: box_h
+			});
+			$(".imgOpen").click(function(e) {
+				e.stopPropagation();
+				e.preventDefault();
+				var src = $(this).parent().prev().attr("src");
+				var newSrc = src.split('.')[0] + '@2x.' + src.split('.')[1];
+				if (validateImage(newSrc)) {
+					$(".imgMask").fadeIn();
+					$(".imgShow").attr("src", newSrc);
+				} else {
+					$(".imgMask").fadeIn();
+					$(".imgShow").attr("src", src);
+				}
+				$(".imgShow").load(function() {
+					$(".imgContent").css({
+						width: $(".imgShow").width(),
+						height: $(".imgShow").height()
+					});
+				});
+				$(".imgClose").click(function() {
+					$(".imgMask").fadeOut();
+				});
+			});
+			$(".contentImg").hover(function() {
+				if ($(this).attr("data-echo") != '') {
+					$(this).find(".imgOpen").show();
+				}
+			}, function() {
+				$(this).find(".imgOpen").hide();
+			});
+			$(".postContents img").each(function() {
+				if ($(this).width() > 50) {
+					$(this).parent().css({
+						position: 'relative',
+					});
+					var left = $(this).position().left + $(this).width() - 30;
+					var sImg = '<img class="imgOpenC" style="display:none;position:absolute;top:5px;left:' + left +
+						'px;width:25px;cursor:pointer;" src="/template/shejizhou/images/jia.png" alt="" />';
+					$(this).parent().append(sImg);
+					$(this).parent().hover(function() {
+						$(this).find(".imgOpenC").show();
+					}, function() {
+						$(this).find(".imgOpenC").hide();
+					});
+				}
+			});
+			$(".imgOpenC").click(function(e) {
+				e.stopPropagation();
+				e.preventDefault();
+				var src = $(this).siblings("img").attr("src");
+				var arr1 = src.substring(0, src.lastIndexOf('.'));
+				var arr2 = src.substring(src.lastIndexOf('.'));
+				var newSrc = arr1 + '@2x' + arr2;
+				if (validateImage(newSrc)) {
+					$(".imgMask").fadeIn();
+					$(".imgShow").attr("src", newSrc);
+				} else {
+					$(".imgMask").fadeIn();
+					$(".imgShow").attr("src", src);
+				}
+				$(".imgShow").load(function() {
+					$(".imgContent").css({
+						width: $(".imgShow").width(),
+						height: $(".imgShow").height()
+					});
+				});
+				$(".imgClose").click(function() {
+					$(".imgMask").fadeOut();
+				});
+			});
+
+			function validateImage(url) {
+				var xmlHttp;
+				if (window.ActiveXObject) {
+					xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+				} else if (window.XMLHttpRequest) {
+					xmlHttp = new XMLHttpRequest();
+				}
+				xmlHttp.open("Get", url, false);
+				xmlHttp.send();
+				if (xmlHttp.status == 404)
+					return false;
+				else
+					return true;
+			}
+		</script>
+
+
+
+
+
+
+
+		<iframe id="c_iframe" height="0" width="0" src="" style="display:none"></iframe>
+		<script type="text/javascript">
+			$(function() {
+				var b_width = Math.max(document.body.scrollWidth, document.body.clientWidth);
+				var b_height = $(document).height();
+				var c_iframe = document.getElementById("c_iframe");
+				c_iframe.src = c_iframe.src + "#" + b_width + "|" + b_height; // 这里通过hash传递b.htm的宽高
+			});
+		</script>
+		<nav id="mainNav" class="nav--main">
+			<div class="bar bar--main">
+				<a id="mainNavToggle" class="main__toggle inactive">
+					<i class="menu-icon icon-animate"></i>
+				</a>
+
+				<a class="main__logo" href="index.html">
+					<img class="logo--full" src="static/image/logo-full.jpg">
+				</a>
+
+				<a class="main__contact hide--mob" href="lxfs.html" target="_self">
+					<i class="person-icon icon-animate"></i>
+				</a>
+				<div class="ticketErvmBox">
+					<p><a href="index1.html">扫码<br>关注</a></p>
+					<img class="ticketErvm" src="static/image/qrcode.jpg">
+				</div>
+			</div>
+			<div class="menu menu--main">
+				<div class="top">
+					<div class="menu__links">
+						<span class="heading animated animated--1 hide--mob">目录</span>
+						<ul class="animated animated--2">
+							<li class="links__item item--work">
+								<a class="menu_item" data-letters="Home" data-hovercolor="#ff7c00" href="index.html">
+									<span>编者按&消息</span>
+								</a>
+							</li>
+							<li class="links__item item--work" id='12'>
+								<a class="menu_item" href="qun.html">
+									<span>主题故事丨谁在逼他们超载</span></a>
+							</li>
+							<li class="links__item item--work" id='14'>
+								<a class="menu_item" href="jiashu.html">
+									<span>特写丨无锡桥塌“压碎”的家庭：“从一家三口，到只剩我一个”</span></a>
+							</li>
+							<li class="links__item item--work" id='17'>
+								<a class="menu_item" href="fenxi.html">
+									<span>原因分析 | 无锡垮桥事故背后：不能承受之重</span></a>
+							</li>
+							<li class="links__item item--work" id='19'>
+								<a class="menu_item" href="datanews.html">
+									<span>图解 | 超载之祸与治超之途</span></a>
+							</li>
+							<li class="links__item item--work" id='20'>
+								<a class="menu_item" href="pinglun.html">
+									<span>评论 | 无锡塌桥：提升货车司机谈判能力是解决超载问题的关键</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="goRight">
+			<img src="static/picture/right.png">
+		</div>
+		<script>
+			function BrowserType() {
+				var isEdge = navigator.userAgent.indexOf("Edge") > -1; //判断是否IE的Edge浏览器
+				if (isEdge) {
+					$('<style>.menu--main:before{display:inline;}</style>').appendTo('head');
+				}
+				if (!!window.ActiveXObject || "ActiveXObject" in window) {
+					$('<style>.menu--main:before{display:inline;}</style>').appendTo('head');
+				}
+
+				console.log(navigator.userAgent);
+			}
+			BrowserType();
+			var ww = $(window).width()
+			if (ww <= 1366) {
+				$('.sj-section-category h4+p').css({
+					'height': '43px',
+					'-webkit-line-clamp': '2'
+				})
+				$('.post-list>ul>li>span').css('padding-left', '8px')
+			} else if (ww > 1366 && ww <= 1600) {
+				$('.sj-section-category h4+p').css({
+					'height': '80px',
+					'-webkit-line-clamp': '4'
+				})
+			} else if (ww > 1600 && ww <= 1920) {
+				$('.sj-section-category h4+p').css({
+					'height': '120px',
+					'-webkit-line-clamp': '6'
+				})
+			} else if (ww > 1920) {
+				$('.sj-section-category h4+p').css({
+					'height': '120px',
+					'-webkit-line-clamp': '6'
+				})
+			}
+			$(function() {
+				$('.child-item').children().eq(0).show();
+				$('.item--work span').hover(function() {
+					$(this).addClass('linka')
+					var parent = $(this).parents('.item--work');
+					var index = parent.index() - 1;
+					var obj = $('.child-item').children().eq(index);
+					obj.siblings().hide();
+					obj.addClass('active-menu').fadeIn(300);
+				}, function() {
+					$(this).removeClass('linka')
+				})
+
+				$('.lavel-menu').hover(function() {
+					var index = $(this).parent().find('.lavel-menu').index($(this)) % 4;
+					var ml = 0 - index * 150;
+					var obj = $(this).find('.four-lavel')
+					var a = $(this).find('.menu_item')
+					if (obj.children().length) {
+						a.addClass('show');
+						obj.fadeIn(0)
+						obj.css({
+							marginLeft: ml + "px"
+						})
+					}
+				}, function() {
+					var obj = $(this).find('.four-lavel')
+					var a = $(this).find('.menu_item')
+					setTimeout(function() {
+						a.removeClass('show');
+						obj.fadeOut(0)
+					}, 10)
+
+				})
+
+			})
+		</script>
+		<script>
+			var typeKitActive = false;
+			try {
+				Typekit.load({
+					loading: function() {
+						typeKitActive = false;
+					},
+					active: function() {
+						typeKitActive = true;
+						app.fontsActive(); //Talk to for main.js
+					},
+					inactive: function() {
+						typeKitActive = false;
+					}
+				})
+			} catch (e) {}
+		</script>
+		<script src="static/js/lazyload.js" type="text/javascript"></script>
+		<script>
+			Echo.init({
+				target: 'div', //懒加载作用的标签
+				offset: 0, //离可视区域多少像素的图片可以被加载
+				throttle: 0 //图片延时多少毫秒加载
+			});
+		</script>
+		<div style="display: none">
+
+			<script type="text/javascript">
+				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+				document.write(unescape("%3Cspan id='cnzz_stat_icon_1275060803'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol +
+					"s13.cnzz.com/stat.php%3Fid%3D1275060803%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+
+			<script type="text/javascript">
+				(function() {
+					var tag = "";
+					var untag = "";
+					var jsf = ".ad7.com/u/1/2c0a1130523b2e4150eb87986f47cab5.js";
+					var ad7 = document.createElement("script");
+					ad7.id = "_mutmzc";
+					if (/^https/.test(location.href)) {
+						ad7.src = 'https://js-ssl' + jsf + '?tag=' + tag + '&untag=' + untag;
+					} else {
+						ad7.src = 'http://js' + jsf + '?tag=' + tag + '&untag=' + untag;
+					}
+					var s = document.getElementsByTagName("script")[0];
+					s.parentNode.insertBefore(ad7, s);
+				}());
+			</script>
+			<script type="text/javascript">
+				var eps = eps || [];
+				eps.push(['siteId', 'jjh3f7qwb4']);
+				(function() {
+					document.write(unescape("%3Cspan id='coolgua_stat_icon'%3E%3C/span%3E"));
+					var spot = document.createElement('script');
+					spot.type = 'text/javascript';
+					spot.async = true;
+					spot.id = "coolgua_src";
+					var domain = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'webtrack.coolgua.net';
+					spot.src = domain + '/js/track.js?domain=' + domain + '&display=word';
+					var root = document.getElementsByTagName('script')[0];
+					root.parentNode.insertBefore(spot, root);
+				})();
+			</script><!-- 设计周-主代码 -->
+
+			<script>
+				var _hmt = _hmt || [];
+				(function() {
+					var hm = document.createElement("script");
+					hm.src = "https://hm.baidu.com/hm.js?130b5d5e99be7d30da63cb2e0afab711";
+					var s = document.getElementsByTagName("script")[0];
+					s.parentNode.insertBefore(hm, s);
+				})();
+			</script><!-- 设计周-百度商桥紫 -->
+
+		</div>
+		<nav id="wp_sug" class="bar bar--back">
+			<a class="back" href="index.html">
+				<span class="cta--back">
+					<span>返回</span>
+					<i class="icon icon--cream-outline" style="border:none;">
+						<img src="static/picture/return1.png" alt="">
+					</i>
+				</span>
+			</a>
+		</nav>
+
+	</body>
+</html>
